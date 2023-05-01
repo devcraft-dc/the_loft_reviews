@@ -11,5 +11,8 @@ module.exports = {
   plugins: ['react-refresh'],
   rules: {
     'react-refresh/only-export-components': 'warn',
+    "arrow-body-style": ["error", "as-needed"],
+    "linebreak-style": "off",
+    "no-console": "error",
   },
 }
