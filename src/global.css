@@ -26,6 +26,9 @@ html, body {
   5. Improve text rendering
 */
 body {
+  max-width: 700px;
+  margin: auto;
+  background-color: #c4bab8;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
