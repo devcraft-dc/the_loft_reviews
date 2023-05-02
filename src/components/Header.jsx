@@ -3,7 +3,7 @@ import staff_icon from '../assets/staff.svg';
 import userinfo_icon from '../assets/userinfo.svg';
 
 export const Header = () => (
-  <header className="bg-[#2C2C2C] flex justify-between h-20 text-white px-5">
+  <header className="bg-[#2C2C2C] flex justify-between h-20 text-white px-5 mb-[3px] ">
     <img className="w-12" src={staff_icon} alt="logo" />
 
     <div className="flex align-middle w-40 justify-around">
