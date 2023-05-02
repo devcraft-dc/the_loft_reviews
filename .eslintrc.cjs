@@ -14,5 +14,6 @@ module.exports = {
     "arrow-body-style": ["error", "as-needed"],
     "linebreak-style": "off",
     "no-console": "error",
+    "react/prop-types": "off",
   },
 }
