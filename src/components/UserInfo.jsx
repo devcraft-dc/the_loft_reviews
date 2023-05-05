@@ -17,9 +17,11 @@ export const UserInfo = ({ setShowUserinfo }) => {
   }
 
   return (
-    <div className="w-full border-b-[2px] border-black mt-[2px] rounded-b-[20px]">
+    <div className="w-full border-y-[3px] border-t-secondary-white border-b-main-black rounded-b-3xl bg-secondary-white">
       <div className="w-full flex justify-between p-3.5 mb-[10px] bg-main-black text-secondary-white">
-        <h3 className="w-[70%] max-sm:text-sm">Данные рецензента</h3>
+        <h3 className="text-lg max-md:text-base max-sm:text-sm">
+          Данные рецензента
+        </h3>
         <button onClick={() => setShowUserinfo(false)}>
           <img
             className="w-7 max-md:w-6 max-sm:w-5"
@@ -31,7 +33,7 @@ export const UserInfo = ({ setShowUserinfo }) => {
       <form className="text-center flex flex-col gap-3">
         <div>
           <input
-            className="text-md max-md:text-sm max-sm:text-xs w-[90%] text-secondary-white border-[1px] 
+            className="text-md max-md:text-sm max-sm:text-xs w-11/12 text-secondary-white border-[1px] 
           border-black bg-main-black placeholder:text-secondary-white placeholder:opacity-50 rounded-md p-2"
             type="text"
             name="name"
@@ -42,7 +44,7 @@ export const UserInfo = ({ setShowUserinfo }) => {
         </div>
         <div>
           <input
-            className="text-md max-md:text-sm max-sm:text-xs w-[90%] text-secondary-white border-[1px] 
+            className="text-md max-md:text-sm max-sm:text-xs w-11/12 text-secondary-white border-[1px] 
           border-black bg-main-black placeholder:text-secondary-white placeholder:opacity-50 mb-[10px] rounded-md p-2"
             type=""
             name="phone"
@@ -52,14 +54,14 @@ export const UserInfo = ({ setShowUserinfo }) => {
           />
         </div>
       </form>
-      <div className="w-[90%] flex justify-end max-md:justify-center gap-2 mb-[10px] m-auto">
+      <div className="w-11/12 flex justify-end max-md:justify-center gap-2 mb-[10px] m-auto">
         <button
           onClick={() => setShowUserinfo(false)}
-          className="text-md max-md:text-sm max-sm:text-xs border bg-main-black text-secondary-white border-black rounded-md py-[5px] px-[10px]"
+          className="text-md max-md:text-sm max-sm:text-xs border bg-main-black text-secondary-white rounded-md py-[5px] px-[10px]"
         >
           Отмена
         </button>
-        <button className="text-md max-md:text-sm max-sm:text-xs border bg-main-black text-secondary-white border-black rounded-md py-[5px] px-[15px]">
+        <button className="text-md max-md:text-sm max-sm:text-xs border bg-main-black text-secondary-white rounded-md py-[5px] px-[15px]">
           Сохранить
         </button>
       </div>
