@@ -9,7 +9,7 @@ export const Header = () => {
   const [showUserinfo, setShowUserinfo] = useState(false);
 
   return (
-    <>
+    <div className="fixed top-0">
       <header className="bg-main-black flex justify-between items-center h-[5.5rem] max-sm:h-[4.75rem] text-secondary-white px-5">
         <img
           className="w-15 h-11 max-md:w-13 max-md:h-8 max-sm:w-13 max-sm:h-7"
@@ -52,6 +52,6 @@ export const Header = () => {
         </button>
       </header>
       {showUserinfo && <UserInfo setShowUserinfo={setShowUserinfo} />}
-    </>
+    </div>
   );
 };
