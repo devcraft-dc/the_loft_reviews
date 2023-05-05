@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+// eslint-disable-next-line no-undef
 const colors = require('tailwindcss/colors');
 
 export default {
@@ -18,7 +19,11 @@ export default {
       black: colors.black,
       white: colors.white
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        "checkbox": "url('/assets/check_box.png')" 
+      }
+    },
   },
   plugins: [],
 }
