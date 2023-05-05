@@ -9,15 +9,15 @@ export const Header = () => {
   const [showUserinfo, setShowUserinfo] = useState(false);
 
   return (
-    <div className="fixed top-0">
-      <header className="bg-main-black flex justify-between items-center h-[5.5rem] max-sm:h-[4.75rem] text-secondary-white px-5">
+    <div className="fixed top-0 w-[500px] max-lg:w-full">
+      <header className="bg-main-black flex justify-between items-center text-secondary-white py-4 max-md:py-3 max-sm:py-2 px-5">
         <img
           className="w-15 h-11 max-md:w-13 max-md:h-8 max-sm:w-13 max-sm:h-7"
           src={white_logo}
           alt="logo"
         />
 
-        <div className="flex gap-5 max-md:gap-4 p-3 m-3 border-x border-black border-opacity-25">
+        <div className="flex gap-5 max-md:gap-4 border-x px-3 mx-3 border-secondary-white border-opacity-10">
           <button>
             <img
               className="w-8 mx-auto max-md:w-7 max-sm:w-6"

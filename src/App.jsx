@@ -1,16 +1,11 @@
-import { Header } from './components/Header';
-import { Search } from './components/Search';
-import { CategoryFilter } from './components/CategoryFilter';
 import { Content } from './components/Content';
+import { Layout } from './components/Layout';
 
 function App() {
   return (
-    <>
-      <Header />
+    <Layout>
       <Content />
-      <Search />
-      <CategoryFilter />
-    </>
+    </Layout>
   );
 }
 
