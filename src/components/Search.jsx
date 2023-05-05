@@ -17,11 +17,9 @@ export const Search = () => {
     </div>
   );
 
-  // remove mt-5 after changes
-
   return (
     <div
-      className={`flex flex-row-reverse items-center h-[3.5rem] max-md:h-[3.25rem] max-sm:h-[3rem] mt-5 ${
+      className={`flex flex-row-reverse items-center ${
         showInput && 'bg-main-black'
       }`}
     >
@@ -30,7 +28,7 @@ export const Search = () => {
         onClick={() => setShowInput(!showInput)}
       >
         <img
-          className="w-8 max-md:w-7 max-sm:w-6"
+          className="w-9 max-md:w-8 max-sm:w-7"
           src={search_icon}
           alt="search"
         />
