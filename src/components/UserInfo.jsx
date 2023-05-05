@@ -1,9 +1,20 @@
 import { useState } from 'react';
 import close_button from '../assets/close_button.svg';
+import { formatPhoneNumber } from '../utils/formatPhoneNumber';
 
 export const UserInfo = ({ setShowUserinfo }) => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
+
+  const handlePhoneInput = (value) => {
+    const formattedPhoneNumber = formatPhoneNumber(value);
+    setPhone(formattedPhoneNumber);
+  };
+
+  function handleNameInput(value) {
+    const formattedName = value.replace(/[^a-zA-Z0-9\u0400-\u04FF-"' ]/, '');
+    setName(formattedName);
+  }
 
   return (
     <div className="w-full border-b-[2px] border-black mt-[2px] rounded-b-[20px]">
@@ -26,7 +37,7 @@ export const UserInfo = ({ setShowUserinfo }) => {
             name="name"
             placeholder="Имя (не обязательно)"
             value={name}
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => handleNameInput(e.target.value)}
           />
         </div>
         <div>
@@ -37,7 +48,7 @@ export const UserInfo = ({ setShowUserinfo }) => {
             name="phone"
             placeholder="Номер телефона (не обязательно)"
             value={phone}
-            onChange={(e) => setPhone(e.target.value)}
+            onChange={(e) => handlePhoneInput(e.target.value)}
           />
         </div>
       </form>
@@ -49,7 +60,7 @@ export const UserInfo = ({ setShowUserinfo }) => {
           Отмена
         </button>
         <button className="text-md max-md:text-sm max-sm:text-xs border bg-main-black text-secondary-white border-black rounded-md py-[5px] px-[15px]">
-          Отправить
+          Сохранить
         </button>
       </div>
     </div>
