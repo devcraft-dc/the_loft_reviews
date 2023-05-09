@@ -4,9 +4,16 @@ import food_icon from '../assets/food.svg';
 import staff_icon from '../assets/staff.svg';
 import userinfo_icon from '../assets/userinfo.svg';
 import white_logo from '../assets/white_logo.png';
+import { IconButton } from './IconButton';
+
+const links = [
+  { icon: food_icon, title: 'Еда' },
+  { icon: staff_icon, title: 'Персонал' },
+];
 
 export const Header = () => {
   const [showUserinfo, setShowUserinfo] = useState(false);
+  const [activeLink, setActiveLink] = useState(links[0].title);
 
   return (
     <div className="fixed top-0 w-[500px] max-lg:w-full">
@@ -18,38 +25,23 @@ export const Header = () => {
         />
 
         <div className="flex gap-5 max-md:gap-4 border-x px-3 mx-3 border-secondary-white border-opacity-10">
-          <button>
-            <img
-              className="w-8 mx-auto max-md:w-7 max-sm:w-6"
-              src={food_icon}
-              alt="food"
+          {links.map((link) => (
+            <IconButton
+              key={link.title}
+              icon={link.icon}
+              title={link.title}
+              isActive={activeLink === link.title}
+              onClick={() => setActiveLink(link.title)}
             />
-            <span className="text-sm max-md:text-xs max-sm:text-[0.65rem] ">
-              Еда
-            </span>
-          </button>
-          <button>
-            <img
-              className="w-8 mx-auto max-md:w-7 max-sm:w-6"
-              src={staff_icon}
-              alt="staff"
-            />
-            <span className="text-sm max-md:text-xs max-sm:text-[0.65rem]">
-              Персонал
-            </span>
-          </button>
+          ))}
         </div>
 
-        <button onClick={() => setShowUserinfo(!showUserinfo)}>
-          <img
-            className="w-8 mx-auto max-md:w-7 max-sm:w-6"
-            src={userinfo_icon}
-            alt="userinfo"
-          />
-          <span className="text-sm max-md:text-xs max-sm:text-[0.65rem]">
-            Данные
-          </span>
-        </button>
+        <IconButton
+          icon={userinfo_icon}
+          title="Данные"
+          onClick={() => setShowUserinfo(!showUserinfo)}
+          isActive={showUserinfo}
+        />
       </header>
       {showUserinfo && <UserInfo setShowUserinfo={setShowUserinfo} />}
     </div>
