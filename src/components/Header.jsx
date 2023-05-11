@@ -7,7 +7,7 @@ import white_logo from '../assets/white_logo.png';
 import { IconButton } from './IconButton';
 
 const links = [
-  { icon: food_icon, title: 'Еда' },
+  { icon: food_icon, title: 'Меню' },
   { icon: staff_icon, title: 'Персонал' },
 ];
 

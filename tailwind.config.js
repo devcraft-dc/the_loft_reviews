@@ -9,7 +9,6 @@ export default {
       lg: '500px',
       sm: '350px',
       md: '400px',
-
     },
     colors: {
       'main-black': '#2C2C2C',
@@ -17,11 +16,6 @@ export default {
       gray: colors.gray,
       black: colors.black,
       white: colors.white,
-    },
-    extend: {
-      backgroundImage: {
-        "checkbox": "url('/assets/check_box.png')" 
-      }
     },
   },
   plugins: [require('tailwind-scrollbar')({ nocompatible: true })],
