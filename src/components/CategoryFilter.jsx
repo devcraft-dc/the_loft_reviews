@@ -1,22 +1,24 @@
 import { useState } from 'react';
-import cake from '../assets/cake.svg';
-import drink from '../assets/drink.svg';
-import soup from '../assets/soup.svg';
-import sushi from '../assets/sushi.svg';
-import grill from '../assets/grill.svg';
-import mountain from '../assets/mountain.svg';
-import fastfood from '../assets/fastfood.svg';
+import cake from '../assets/icons/cake.svg';
+import drink from '../assets/icons/drink.svg';
+import euro_food from '../assets/icons/euro_food.svg';
+import soup from '../assets/icons/soup.svg';
+import sushi from '../assets/icons/sushi.svg';
+import grill from '../assets/icons/grill.svg';
+import mountain from '../assets/icons/mountain.svg';
+import fastfood from '../assets/icons/fastfood.svg';
 import { Search } from './Search';
 import { IconButton } from './IconButton';
 
 const icons = [
+  { icon: sushi, title: 'Азия' },
+  { icon: euro_food, title: 'Евро' },
+  { icon: soup, title: 'Супы' },
+  { icon: mountain, title: 'Нац.кухня' },
+  { icon: grill, title: 'Мангал' },
+  { icon: fastfood, title: 'Фастфуд' },
   { icon: cake, title: 'Десерты' },
   { icon: drink, title: 'Напитки' },
-  { icon: soup, title: 'Супы' },
-  { icon: sushi, title: 'Азия' },
-  { icon: grill, title: 'Мангал' },
-  { icon: mountain, title: 'Нац.кухня' },
-  { icon: fastfood, title: 'Фастфуд' },
 ];
 
 export const CategoryFilter = () => {

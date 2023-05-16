@@ -18,5 +18,6 @@ export default {
       white: colors.white,
     },
   },
+
   plugins: [require('tailwind-scrollbar')({ nocompatible: true })],
 };
