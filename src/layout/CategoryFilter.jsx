@@ -7,8 +7,8 @@ import sushi from '../assets/icons/sushi.svg';
 import grill from '../assets/icons/grill.svg';
 import mountain from '../assets/icons/mountain.svg';
 import fastfood from '../assets/icons/fastfood.svg';
-import { Search } from './Search';
-import { IconButton } from './IconButton';
+import { Search } from '../components/Search';
+import { IconButton } from '../components/IconButton';
 
 const icons = [
   { icon: sushi, title: 'Азия' },

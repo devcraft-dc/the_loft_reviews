@@ -1,1 +1,4 @@
-export const StaffPage = () => <div>StaffPage</div>;
+import { Content } from '../components/Content';
+import staff from '../assets/staff.json';
+
+export const StaffPage = () => <Content content={staff} />;

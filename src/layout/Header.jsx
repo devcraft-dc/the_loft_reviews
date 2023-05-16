@@ -1,14 +1,15 @@
 import { useState } from 'react';
-import { UserInfo } from './UserInfo';
+import { UserInfo } from '../components/UserInfo';
 import food_icon from '../assets/icons/food.svg';
 import staff_icon from '../assets/icons/staff.svg';
 import userinfo_icon from '../assets/icons/userinfo.svg';
 import white_logo from '../assets/white_logo.png';
-import { IconButton } from './IconButton';
+import { IconButton } from '../components/IconButton';
+import { Link } from 'react-router-dom';
 
 const links = [
-  { icon: food_icon, title: 'Меню' },
-  { icon: staff_icon, title: 'Персонал' },
+  { icon: food_icon, title: 'Меню', link: '/' },
+  { icon: staff_icon, title: 'Персонал', link: '/staff' },
 ];
 
 export const Header = () => {
@@ -26,13 +27,14 @@ export const Header = () => {
 
         <div className="flex gap-5 max-md:gap-4 border-x px-3 mx-3 border-secondary-white border-opacity-10">
           {links.map((link) => (
-            <IconButton
-              key={link.title}
-              icon={link.icon}
-              title={link.title}
-              isActive={activeLink === link.title}
-              onClick={() => setActiveLink(link.title)}
-            />
+            <Link key={link.title} to={link.link}>
+              <IconButton
+                icon={link.icon}
+                title={link.title}
+                isActive={activeLink === link.title}
+                onClick={() => setActiveLink(link.title)}
+              />
+            </Link>
           ))}
         </div>
 
