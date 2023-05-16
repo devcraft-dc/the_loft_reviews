@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import close_button from '../assets/close_button.svg';
+import close_button from '../assets/icons/close_button.svg';
 import { formatPhoneNumber } from '../utils/formatPhoneNumber';
 
 export const UserInfo = ({ setShowUserinfo }) => {

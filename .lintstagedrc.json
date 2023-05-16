@@ -1,0 +1,3 @@
+{
+  "src/**/*.{js,jsx}": ["eslint --fix --quiet", "prettier --write --quiet"]
+}

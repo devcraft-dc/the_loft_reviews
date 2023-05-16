@@ -6,6 +6,11 @@ export const Card = ({ title, image }) => (
       </h5>
     </div>
 
-    <img className="w-72 h-40 max-md:h-36 max-md:w-56 max-sm:w-48 max-sm:h-28" src={image} alt={title} />
+    <img
+      loading="lazy"
+      className="w-72 h-40 max-md:h-36 max-md:w-56 max-sm:w-48 max-sm:h-28"
+      src={image}
+      alt={title}
+    />
   </div>
 );
