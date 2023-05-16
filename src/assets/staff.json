@@ -1,0 +1,12 @@
+[
+  {
+    "title": "Джим",
+    "image": "/staff_images/image.jpg",
+    "position": "Официант"
+  },
+  {
+    "title": "Джон",
+    "image": "/staff_images/image.jpg",
+    "position": "Официант"
+  }
+]

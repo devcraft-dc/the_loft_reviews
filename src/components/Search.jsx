@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import search_icon from '../assets/search.svg';
-import close_icon from '../assets/close_button.svg';
+import search_icon from '../assets/icons/search.svg';
+import close_icon from '../assets/icons/close_button.svg';
 
 export const Search = () => {
   const [showInput, setShowInput] = useState(false);

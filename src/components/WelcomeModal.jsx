@@ -1,5 +1,5 @@
-import modal_close from '../assets/modal_close.svg';
-import modal_logo from '../assets/Modal_logo.PNG';
+import modal_close from '../assets/icons/modal_close.svg';
+import modal_logo from '../assets/modal_logo.png';
 
 export const WelcomeModal = () => (
   <div className="w-full h-[100vh] relative">

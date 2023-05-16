@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { UserInfo } from './UserInfo';
-import food_icon from '../assets/food.svg';
-import staff_icon from '../assets/staff.svg';
-import userinfo_icon from '../assets/userinfo.svg';
+import food_icon from '../assets/icons/food.svg';
+import staff_icon from '../assets/icons/staff.svg';
+import userinfo_icon from '../assets/icons/userinfo.svg';
 import white_logo from '../assets/white_logo.png';
 import { IconButton } from './IconButton';
 
