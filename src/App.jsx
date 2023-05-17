@@ -7,8 +7,9 @@ import { Context } from './context';
 
 function App() {
   const [searchText, setSearchText] = useState('');
+  const [activeCategory, setActiveCategory] = useState(null)
   return (
-    <Context.Provider value={{ searchText, setSearchText }}>
+    <Context.Provider value={{ searchText, setSearchText, activeCategory, setActiveCategory }}>
       <Layout>
         <Routes>
           <Route path="/" element={<MenuPage />} />
