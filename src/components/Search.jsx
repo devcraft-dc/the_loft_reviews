@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import search_icon from '../assets/icons/search.svg';
 import close_icon from '../assets/icons/close_button.svg';
+import { Context } from '../context';
 
 export const Search = () => {
+  const { searchText, setSearchText } = useContext(Context);
   const [showInput, setShowInput] = useState(false);
-  const [searchText, setSearchText] = useState('');
 
   const searchInputLayout = (
     <div className="flex-1 p-3 justify-center">
