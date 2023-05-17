@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 import cake from '../assets/icons/cake.svg';
 import drink from '../assets/icons/drink.svg';
 import euro_food from '../assets/icons/euro_food.svg';
@@ -7,8 +7,10 @@ import sushi from '../assets/icons/sushi.svg';
 import grill from '../assets/icons/grill.svg';
 import mountain from '../assets/icons/mountain.svg';
 import fastfood from '../assets/icons/fastfood.svg';
+import salad from '../assets/icons/salad.svg';
 import { Search } from '../components/Search';
 import { IconButton } from '../components/IconButton';
+import { Context } from '../context';
 
 const icons = [
   { icon: sushi, title: 'Азия' },
@@ -16,13 +18,14 @@ const icons = [
   { icon: soup, title: 'Супы' },
   { icon: mountain, title: 'Нац.кухня' },
   { icon: grill, title: 'Мангал' },
+  { icon: salad, title: 'Салаты' },
   { icon: fastfood, title: 'Фастфуд' },
   { icon: cake, title: 'Десерты' },
   { icon: drink, title: 'Напитки' },
 ];
 
 export const CategoryFilter = () => {
-  const [activeCategory, setActiveCategory] = useState(null);
+  const { activeCategory, setActiveCategory } = useContext(Context);
 
   const toggleActiveCategory = (category) => {
     if (activeCategory) {
