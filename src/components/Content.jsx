@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { Card } from './Card';
 import { Context } from '../context';
+import { NothingFound } from './NothingFound';
 
 export const Content = ({ content }) => {
   const { searchText, activeCategory } = useContext(Context);
@@ -19,6 +20,7 @@ export const Content = ({ content }) => {
       {filteredFood.map((item) => (
         <Card key={item.title} title={item.title} image={item.image} />
       ))}
+      {filteredFood.length === 0 && <NothingFound />}
     </div>
   );
 };
