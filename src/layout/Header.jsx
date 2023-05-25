@@ -5,7 +5,7 @@ import staff_icon from '../assets/icons/staff.svg';
 import userinfo_icon from '../assets/icons/userinfo.svg';
 import white_logo from '../assets/white_logo.png';
 import { IconButton } from '../components/IconButton';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const links = [
   { icon: food_icon, title: 'Меню', link: '/' },
@@ -14,7 +14,6 @@ const links = [
 
 export const Header = () => {
   const [showUserinfo, setShowUserinfo] = useState(false);
-  const [activeLink, setActiveLink] = useState(links[0].title);
 
   return (
     <div className="fixed top-0 w-[500px] max-lg:w-full">
@@ -25,16 +24,18 @@ export const Header = () => {
           alt="logo"
         />
 
-        <div className="flex gap-5 max-md:gap-4 border-x px-3 mx-3 border-secondary-white border-opacity-10">
+        <div className="flex gap-5 max-md:gap-4 border-x px-3 mx-3 border-secondary-white border-opacity-10 relative">
           {links.map((link) => (
-            <Link key={link.title} to={link.link}>
-              <IconButton
-                icon={link.icon}
-                title={link.title}
-                isActive={activeLink === link.title}
-                onClick={() => setActiveLink(link.title)}
-              />
-            </Link>
+            <NavLink
+              className={({ isActive }) =>
+                isActive &&
+                'after:content-[""] after:block after:bottom-[-3px] after:w-full after:h-[3px] after:bg-secondary-white'
+              }
+              key={link.title}
+              to={link.link}
+            >
+              <IconButton icon={link.icon} title={link.title} />
+            </NavLink>
           ))}
         </div>
 
