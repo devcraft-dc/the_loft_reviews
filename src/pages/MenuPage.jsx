@@ -1,4 +1,3 @@
-import { Content } from '../components/Content';
-import food from '../assets/food.json';
+import { MenuContent } from '../components/MenuContent';
 
-export const MenuPage = () => <Content content={food} />;
+export const MenuPage = () => <MenuContent />;
