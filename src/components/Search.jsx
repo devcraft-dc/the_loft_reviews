@@ -12,7 +12,7 @@ export const Search = () => {
       <input
         className="text-md max-md:text-sm max-sm:text-xs w-full h-9 max-md:h-8 max-sm:h-7 rounded p-3 outline-none"
         type="text"
-        placeholder="Поиск..."
+        placeholder="Введите название..."
         value={searchText}
         onChange={(e) => setSearchText(e.target.value)}
       />
