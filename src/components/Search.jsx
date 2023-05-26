@@ -33,6 +33,7 @@ export const Search = () => {
           className="w-8 max-md:w-7 max-sm:w-6"
           src={showInput ? close_icon : search_icon}
           alt="icon"
+          onClick={() => setSearchText('')}
         />
       </button>
 
