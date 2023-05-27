@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import all from '../assets/icons/all.svg';
 import cake from '../assets/icons/cake.svg';
 import drink from '../assets/icons/drink.svg';
 import euro_food from '../assets/icons/euro_food.svg';
@@ -13,6 +14,7 @@ import { IconButton } from '../components/IconButton';
 import { Context } from '../context';
 
 const icons = [
+  { icon: all, title: 'Все' },
   { icon: sushi, title: 'Азия' },
   { icon: euro_food, title: 'Евро' },
   { icon: soup, title: 'Супы' },
@@ -28,29 +30,25 @@ export const CategoryFilter = () => {
   const { activeCategory, setActiveCategory } = useContext(Context);
 
   const toggleActiveCategory = (category) => {
-    if (activeCategory) {
-      if (activeCategory === category) {
-        setActiveCategory(null);
-      } else {
-        setActiveCategory(category);
-      }
-    } else {
-      setActiveCategory(category);
-    }
+    setActiveCategory(category);
   };
 
   return (
     <div className="fixed bottom-0 w-[500px] max-lg:w-full">
       <Search />
-      <div className="flex gap-6 p-5 max-md:p-4 max-sm:p-3 items-end bg-main-black overflow-x-auto scrollbar-thin scrollbar-thumb-main-black scrollbar-track-secondary-white scrollbar-thumb-rounded-md text-secondary-white">
+      <div className="grid grid-flow-col gap-2 p-3 pt-4 bg-main-black overflow-x-auto scrollbar-thin scrollbar-thumb-main-black scrollbar-track-secondary-white scrollbar-thumb-rounded-md text-secondary-white">
         {icons.map((icon) => (
-          <IconButton
+          <div
             key={icon.title}
-            icon={icon.icon}
-            title={icon.title}
-            isActive={icon.title === activeCategory}
-            onClick={() => toggleActiveCategory(icon.title)}
-          />
+            className="w-[70px] max-md:w-[55px] max-sm:w-[45px] text-center"
+          >
+            <IconButton
+              icon={icon.icon}
+              title={icon.title}
+              isActive={icon.title === activeCategory}
+              onClick={() => toggleActiveCategory(icon.title)}
+            />
+          </div>
         ))}
       </div>
     </div>

@@ -21,8 +21,8 @@ export const Search = () => {
 
   return (
     <div
-      className={`flex flex-row-reverse items-center ${
-        showInput && 'bg-main-black border-b-[3px]'
+      className={`flex flex-row-reverse items-center border-b-[3px] ${
+        showInput && 'bg-main-black'
       }`}
     >
       <button

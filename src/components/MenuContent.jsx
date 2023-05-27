@@ -11,7 +11,7 @@ export const MenuContent = () => {
     const dishTitle = dish.title.toUpperCase();
     const searchQuery = searchText.toUpperCase();
 
-    if (activeCategory) {
+    if (activeCategory && activeCategory !== 'Все') {
       return (
         dishTitle.includes(searchQuery) && dish.category === activeCategory
       );
