@@ -7,7 +7,7 @@ import { Context } from './context';
 
 function App() {
   const [searchText, setSearchText] = useState('');
-  const [activeCategory, setActiveCategory] = useState(null);
+  const [activeCategory, setActiveCategory] = useState("Все");
 
   return (
     <Context.Provider
