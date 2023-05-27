@@ -30,9 +30,12 @@ export const StaffReview = () => {
   const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encoded}`;
 
   const sendReview = (e) => {
+    if (reviewText !== '') {
+      e.preventDefault();
+      void fetch(url);
+      setReviewText('');
+    }
     e.preventDefault();
-    void fetch(url);
-    setReviewText('');
   };
 
   return (

@@ -16,8 +16,8 @@ export const createTemplate = ({
   const whichCategory = category === 'food' ? food : staff;
 
   return `Отправитель: 
-- Имя: ${name !== null ? name : 'не указано'}
-- Номер телефона: ${phone !== null ? phone : 'не указано'}
+- Имя: ${name ? name : 'не указано'}
+- Номер телефона: ${phone ? phone : 'не указано'}
   
 Отзыв:
 ${whichCategory}`;
