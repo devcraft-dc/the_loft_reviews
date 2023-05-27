@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { UserInfo } from '../components/UserInfo';
 import food_icon from '../assets/icons/food.svg';
 import staff_icon from '../assets/icons/staff.svg';
-import userinfo_icon from '../assets/icons/userinfo.svg';
 import white_logo from '../assets/white_logo.png';
 import { IconButton } from '../components/IconButton';
 import { NavLink } from 'react-router-dom';
@@ -24,7 +23,7 @@ export const Header = () => {
           alt="logo"
         />
 
-        <div className="flex gap-5 max-md:gap-4 border-x px-3 mx-3 border-secondary-white border-opacity-10 relative">
+        <div className="flex gap-5 max-md:gap-4 relative">
           {links.map((link) => (
             <NavLink
               className={({ isActive }) =>
@@ -39,13 +38,6 @@ export const Header = () => {
             </NavLink>
           ))}
         </div>
-
-        <IconButton
-          icon={userinfo_icon}
-          title="Данные"
-          onClick={() => setShowUserinfo(!showUserinfo)}
-          isActive={showUserinfo}
-        />
       </header>
       {showUserinfo && <UserInfo setShowUserinfo={setShowUserinfo} />}
     </div>
