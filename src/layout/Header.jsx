@@ -28,8 +28,9 @@ export const Header = () => {
           {links.map((link) => (
             <NavLink
               className={({ isActive }) =>
-                isActive &&
-                'after:content-[""] after:block after:bottom-[-3px] after:w-full after:h-[3px] after:bg-secondary-white'
+                isActive
+                  ? 'after:content-[""] after:block after:bottom-[-3px] after:w-full after:h-[3px] after:bg-secondary-white'
+                  : undefined
               }
               key={link.title}
               to={link.link}
