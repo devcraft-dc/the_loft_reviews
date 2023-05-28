@@ -24,20 +24,26 @@ export const WelcomeModal = ({ setModalActive }) => {
     localStorage.setItem('modalChecked', checked);
   };
 
+  const clearLocalStorage = () => {
+    setModalActive(false);
+    localStorage.removeItem('name');
+    localStorage.removeItem('phone');
+  };
+
   return (
     <div className="fixed grid place-items-center z-50 w-full h-full bg-black bg-opacity-75">
       <div className="w-96 max-md:w-80 max-sm:w-72 bg-main-black rounded-lg fixed">
         <div className="relative">
           <button
             className="absolute top-3 right-[12px] w-8 max-md:w-6 max-sm:w-6"
-            onClick={saveToLocalStorage}
+            onClick={clearLocalStorage}
           >
             <img src={modal_close} alt="close icon" />
           </button>
         </div>
 
         <div className="w-full pt-10 pb-5 text-white">
-          <h3 className="text-center mb-5 text-xl max-md:text-sm">
+          <h3 className="text-center mb-5 text-xl max-md:text-xl">
             Добро пожаловать! <br /> Введите ваши данные
           </h3>
           <form className="text-center flex flex-col gap-3">

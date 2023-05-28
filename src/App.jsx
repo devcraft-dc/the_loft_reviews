@@ -4,6 +4,8 @@ import { MenuPage } from './pages/MenuPage';
 import { StaffPage } from './pages/StaffPage';
 import { useState } from 'react';
 import { Context } from './context';
+import { MenuReview } from './pages/MenuReview';
+import { StaffReview } from './pages/StaffReview';
 
 function App() {
   const [searchText, setSearchText] = useState('');
@@ -16,7 +18,9 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<MenuPage />} />
+          <Route path="/:id" element={<MenuReview />} />
           <Route path="/staff" element={<StaffPage />} />
+          <Route path="/staff/:id" element={<StaffReview />} />
         </Routes>
       </Layout>
     </Context.Provider>
