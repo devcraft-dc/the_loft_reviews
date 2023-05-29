@@ -5,7 +5,6 @@ import { formatPhoneNumber } from '../utils/formatPhoneNumber';
 export const WelcomeModal = ({ setModalActive }) => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
-  const [checked, setChecked] = useState(false);
 
   const handlePhoneInput = (value) => {
     const formattedPhoneNumber = formatPhoneNumber(value);
@@ -17,11 +16,10 @@ export const WelcomeModal = ({ setModalActive }) => {
     setName(formattedName);
   }
 
-  const saveToLocalStorage = () => {
+  const saveToSessionStorage = () => {
     setModalActive(false);
     localStorage.setItem('name', name);
     localStorage.setItem('phone', phone);
-    localStorage.setItem('modalChecked', checked);
   };
 
   const clearLocalStorage = () => {
@@ -73,20 +71,9 @@ export const WelcomeModal = ({ setModalActive }) => {
         </div>
 
         <div className="flex justify-center items-center mb-8">
-          <label className="relative flex justify-center items-center font-medium max-md:text-sm max-sm:text-xs text-secondary-white dark:text-gray-300 text-md px-6">
-            <input
-              type="checkbox"
-              className="cursor-pointer absolute left-0 w-5 h-5 max-md:w-4 max-md:h4 max-sm:w-3 max-sm:h3 text-blue-100 bg-gray-500 
-    border-black-300 rounded focus:ring-blue-500 
-    dark:focus:ring-blue-600  
-    dark:bg-gray-700 dark:border-gray-600"
-              onChange={(e) => setChecked(e.target.checked)}
-            />
-            Запомнить
-          </label>
           <button
             className="text-main-black text-sm max-md:px-1 max-sm:px-[2px] max-md:py-[1px] max-sm:py-[.8px] px-2 py-1 cursor-pointer rounded bg-secondary-white"
-            onClick={saveToLocalStorage}
+            onClick={saveToSessionStorage}
           >
             Сохранить
           </button>
