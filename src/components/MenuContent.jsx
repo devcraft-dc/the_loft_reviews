@@ -4,7 +4,7 @@ import { Context } from '../context';
 import { NothingFound } from './NothingFound';
 import food from '../assets/food.json';
 import { Link } from 'react-router-dom';
-import { saveTargetInLS } from '../utils/saveTargetInLs';
+import { saveTargetInLS } from '../utils/saveTargetInLS';
 
 export const MenuContent = () => {
   const { searchText, activeCategory } = useContext(Context);
