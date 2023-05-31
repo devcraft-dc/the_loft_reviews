@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { Context } from './context';
 import { MenuReview } from './pages/MenuReview';
 import { StaffReview } from './pages/StaffReview';
+import ScrollToTop from './components/scrollToTop';
 
 function App() {
   const [searchText, setSearchText] = useState('');
@@ -15,6 +16,7 @@ function App() {
     <Context.Provider
       value={{ searchText, setSearchText, activeCategory, setActiveCategory }}
     >
+      <ScrollToTop />
       <Layout>
         <Routes>
           <Route path="/" element={<MenuPage />} />
