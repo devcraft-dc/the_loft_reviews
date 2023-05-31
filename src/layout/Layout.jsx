@@ -3,6 +3,7 @@ import { WelcomeModal } from '../components/WelcomeModal';
 import { Header } from '../layout/Header';
 import { CategoryFilter } from './CategoryFilter';
 import { useLocation } from 'react-router-dom';
+import { containsNumbers } from '../utils/containsNumbers';
 
 export const Layout = ({ children }) => {
   const [modalActive, setModalActive] = useState(true);
@@ -17,10 +18,6 @@ export const Layout = ({ children }) => {
 
     return () => document.body.classList.remove('overflow-hidden');
   }, [modalActive]);
-
-  function containsNumbers(str) {
-    return /\d/.test(str);
-  }
 
   return (
     <>

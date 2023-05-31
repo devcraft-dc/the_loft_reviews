@@ -16,7 +16,7 @@ export const WelcomeModal = ({ setModalActive }) => {
     setName(formattedName);
   }
 
-  const saveToLocalStorage = () => {
+  const saveToLocalStorage = (name, phone) => {
     setModalActive(false);
     localStorage.setItem('name', name);
     localStorage.setItem('phone', phone);
@@ -73,7 +73,7 @@ export const WelcomeModal = ({ setModalActive }) => {
         <div className="flex justify-center items-center mb-8">
           <button
             className="text-main-black text-sm max-md:px-1 max-sm:px-[2px] max-md:py-[1px] max-sm:py-[.8px] px-2 py-1 cursor-pointer rounded bg-secondary-white"
-            onClick={saveToLocalStorage}
+            onClick={() => saveToLocalStorage(name, phone)}
           >
             Сохранить
           </button>

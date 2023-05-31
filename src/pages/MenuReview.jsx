@@ -7,15 +7,15 @@ import { getValueFromLS } from '../utils/getValueFromLS';
 const token = '6254094428:AAHLn_cZXnDOfoYncvguxarwXWsxzcpuqpI';
 const chatId = '-1001923326203';
 
+const name = getValueFromLS('name');
+const phone = getValueFromLS('phone');
+const category = getValueFromLS('category');
+const target = getValueFromLS('target');
+
 export const MenuReview = () => {
   const [reviewText, setReviewText] = useState('');
   const { id } = useParams();
   const { image, title } = food[id];
-
-  const name = getValueFromLS('name');
-  const phone = getValueFromLS('phone');
-  const category = getValueFromLS('category');
-  const target = getValueFromLS('target');
 
   const template = createTemplate({
     name,
@@ -29,7 +29,7 @@ export const MenuReview = () => {
 
   const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encoded}`;
 
-  const sendReview = (e) => {
+  const sendReview = (e, url) => {
     if (reviewText !== '') {
       e.preventDefault();
       void fetch(url);
@@ -49,7 +49,7 @@ export const MenuReview = () => {
           onChange={(e) => setReviewText(e.target.value)}
           value={reviewText}
         ></textarea>
-        <button onClick={(e) => sendReview(e)}>Отправить</button>
+        <button onClick={(e) => sendReview(e, url)}>Отправить</button>
       </form>
     </div>
   );
