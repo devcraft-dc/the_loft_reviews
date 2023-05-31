@@ -8,7 +8,7 @@ export const StaffContent = () => (
     {staff.map((item, index) => (
       <Link
         to={`/staff/${index}`}
-        key={item.title}
+        key={item.id}
         onClick={() => saveTargetInLS(item.title, 'staff')}
       >
         <Card title={item.title} image={item.image} position={item.position} />

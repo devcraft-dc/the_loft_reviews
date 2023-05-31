@@ -2,31 +2,37 @@
   {
     "title": "Замира",
     "image": "/staff_images/woman.jpg",
-    "position": "Кассир"
+    "position": "Кассир",
+    "id": 1
   },
   {
     "title": "Линда",
     "image": "/staff_images/woman.jpg",
-    "position": "Кассир"
+    "position": "Кассир",
+    "id": 2
   },
   {
     "title": "Амина",
     "image": "/staff_images/woman.jpg",
-    "position": "Кассир"
+    "position": "Кассир",
+    "id": 3
   },
   {
     "title": "Мата",
     "image": "/staff_images/woman.jpg",
-    "position": "Официант"
+    "position": "Официант",
+    "id": 4
   },
   {
     "title": "Айшат",
     "image": "/staff_images/woman.jpg",
-    "position": "Официант"
+    "position": "Официант",
+    "id": 5
   },
   {
     "title": "Айшат",
     "image": "/staff_images/woman.jpg",
-    "position": "Официант"
+    "position": "Официант",
+    "id": 6
   }
 ]
