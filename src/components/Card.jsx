@@ -1,9 +1,10 @@
-export const Card = ({ title, image }) => (
+export const Card = ({ title, image, position }) => (
   <div className="w-full">
-    <div className="flex justify-between items-center px-2 py-1 bg-main-black">
-      <h5 className="text-secondary-white text-md max-md:text-sm max-sm:text-xs text-ellipsis truncate">
+    <div className="flex flex-col px-2 py-1 bg-main-black text-secondary-white">
+      <h5 className=" text-md max-md:text-sm max-sm:text-xs text-ellipsis truncate">
         {title}
       </h5>
+      {position && position}
     </div>
 
     <img
@@ -12,5 +13,6 @@ export const Card = ({ title, image }) => (
       src={image}
       alt={title}
     />
+    
   </div>
 );
