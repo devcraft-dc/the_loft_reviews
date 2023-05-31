@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { WelcomeModal } from '../components/WelcomeModal';
 import { Header } from '../layout/Header';
 import { CategoryFilter } from './CategoryFilter';
@@ -9,7 +9,14 @@ export const Layout = ({ children }) => {
   const { pathname } = useLocation();
   const isMenuPage = pathname.includes('staff');
   const isReviewPage = containsNumbers(pathname);
-  const modalChecked = localStorage.getItem('modalChecked');
+
+  useEffect(() => {
+    if (modalActive) {
+      document.body.classList.add('overflow-hidden');
+    }
+
+    return () => document.body.classList.remove('overflow-hidden');
+  }, [modalActive]);
 
   function containsNumbers(str) {
     return /\d/.test(str);
@@ -17,9 +24,8 @@ export const Layout = ({ children }) => {
 
   return (
     <>
-      {modalActive && (modalChecked === 'false' || modalChecked === null) && (
-        <WelcomeModal setModalActive={setModalActive} />
-      )}
+      {modalActive && <WelcomeModal setModalActive={setModalActive} />}
+
       {isReviewPage ? (
         <div className="w-[500px] max-lg:w-full">{children}</div>
       ) : (
