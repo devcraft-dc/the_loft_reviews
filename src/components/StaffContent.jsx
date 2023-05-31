@@ -11,7 +11,7 @@ export const StaffContent = () => (
         key={item.title}
         onClick={() => saveTargetInLS(item.title, 'staff')}
       >
-        <Card title={item.title} image={item.image} />
+        <Card title={item.title} image={item.image} position={item.position} />
       </Link>
     ))}
   </div>
