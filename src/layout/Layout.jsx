@@ -21,7 +21,7 @@ export const Layout = ({ children }) => {
 
   return (
     <>
-      {modalActive && <WelcomeModal setModalActive={setModalActive} />}
+      {modalActive && !isReviewPage && <WelcomeModal setModalActive={setModalActive} />}
 
       {isReviewPage ? (
         <div className="w-[500px] max-lg:w-full">{children}</div>

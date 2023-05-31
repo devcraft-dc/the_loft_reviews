@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import food from '../assets/food.json';
 import staff from '../assets/staff.json';
-import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
+import { Link, useLocation, useParams } from 'react-router-dom';
 import { createTemplate } from '../utils/createTemplate';
 import { getValueFromLS } from '../utils/getValueFromLS';
 import sendIcon from '../assets/icons/send.svg';
@@ -17,8 +17,8 @@ const target = getValueFromLS('target');
 
 export const ReviewPage = () => {
   const [reviewText, setReviewText] = useState('');
+  const [thanks, setThanks] = useState(false);
   const { id } = useParams();
-  const navigate = useNavigate();
   const { pathname } = useLocation();
 
   const isStaffPage = pathname.includes('staff');
@@ -42,15 +42,31 @@ export const ReviewPage = () => {
     e.preventDefault();
     if (reviewText !== '') {
       void fetch(url);
-      navigate(back);
       setReviewText('');
+      setThanks(true);
     }
   };
+
+  if (thanks) {
+    return (
+      <div className="grid items-center gap-10 mt-24 text-center">
+        <h1 className="text-4xl max-md:text-3xl text-main-black">
+          Спасибо за отзыв!
+        </h1>
+        <Link
+          to={'/'}
+          className="flex justify-center whitespace-nowrap items-center border bg-main-black text-secondary-white h-10 px-3 text-lg m-auto rounded-md"
+        >
+          Вернуться на главную
+        </Link>
+      </div>
+    );
+  }
 
   return (
     <>
       <div className="fixed top-0 w-[500px] max-lg:w-full">
-        <header className="bg-main-black flex justify-between items-center border-b-[3px] text-secondary-white py-7 max-md:py-6 max-sm:py-5 px-5">
+        <header className="bg-main-black flex justify-between items-center border-b-[3px] text-secondary-white py-[29.5px] max-md:py-[25.5px] max-sm:py-[21.5px] px-5">
           <Link to={back}>
             <img
               className="w-8 mx-auto max-md:w-7 max-sm:w-6"
