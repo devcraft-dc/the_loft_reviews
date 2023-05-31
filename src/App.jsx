@@ -4,8 +4,7 @@ import { MenuPage } from './pages/MenuPage';
 import { StaffPage } from './pages/StaffPage';
 import { useState } from 'react';
 import { Context } from './context';
-import { MenuReview } from './pages/MenuReview';
-import { StaffReview } from './pages/StaffReview';
+import { ReviewPage } from './pages/ReviewPage';
 import ScrollToTop from './components/scrollToTop';
 
 function App() {
@@ -20,9 +19,9 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<MenuPage />} />
-          <Route path="/:id" element={<MenuReview />} />
+          <Route path="/:id" element={<ReviewPage />} />
           <Route path="/staff" element={<StaffPage />} />
-          <Route path="/staff/:id" element={<StaffReview />} />
+          <Route path="/staff/:id" element={<ReviewPage />} />
         </Routes>
       </Layout>
     </Context.Provider>
