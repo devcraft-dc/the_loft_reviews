@@ -10,21 +10,22 @@ import backIcon from '../assets/icons/back.svg';
 const token = '6254094428:AAHLn_cZXnDOfoYncvguxarwXWsxzcpuqpI';
 const chatId = '-1001923326203';
 
-const name = getValueFromLS('name');
-const phone = getValueFromLS('phone');
-const category = getValueFromLS('category');
-const target = getValueFromLS('target');
 
 export const ReviewPage = () => {
   const [reviewText, setReviewText] = useState('');
   const [thanks, setThanks] = useState(false);
   const { id } = useParams();
   const { pathname } = useLocation();
-
+  
   const isStaffPage = pathname.includes('staff');
   const back = isStaffPage ? '/staff' : '/';
-
+  
   const { image, title } = isStaffPage ? staff[id] : food[id];
+  
+  const name = getValueFromLS('name');
+  const phone = getValueFromLS('phone');
+  const category = getValueFromLS('category');
+  const target = getValueFromLS('target');
 
   const template = createTemplate({
     name,
