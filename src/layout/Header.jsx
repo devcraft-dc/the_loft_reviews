@@ -1,12 +1,15 @@
 import food_icon from '../assets/icons/food.svg';
 import staff_icon from '../assets/icons/staff.svg';
 import white_logo from '../assets/white_logo.png';
+import reviews_icon from '../assets/icons/reviews_icon.svg';
 import { IconButton } from '../components/IconButton';
 import { NavLink } from 'react-router-dom';
+import { saveCategoryToLS } from '../utils/saveCategoryToLS';
 
 const links = [
   { icon: food_icon, title: 'Меню', link: '/' },
   { icon: staff_icon, title: 'Персонал', link: '/staff' },
+  { icon: reviews_icon, title: 'Другое', link: '/other' },
 ];
 
 export const Header = () => (
@@ -28,6 +31,7 @@ export const Header = () => (
             }
             key={link.title}
             to={link.link}
+            onClick={() => saveCategoryToLS('other')}
           >
             <IconButton icon={link.icon} title={link.title} />
           </NavLink>

@@ -9,6 +9,7 @@ export const Layout = ({ children }) => {
   const [modalActive, setModalActive] = useState(true);
   const { pathname } = useLocation();
   const isMenuPage = pathname.includes('staff');
+  const isOtherPage = pathname.includes('other');
   const isReviewPage = containsNumbers(pathname);
 
   useEffect(() => {
@@ -21,7 +22,9 @@ export const Layout = ({ children }) => {
 
   return (
     <>
-      {modalActive && !isReviewPage && <WelcomeModal setModalActive={setModalActive} />}
+      {modalActive && !isReviewPage && (
+        <WelcomeModal setModalActive={setModalActive} />
+      )}
 
       {isReviewPage ? (
         <div className="w-[500px] max-lg:w-full">{children}</div>
@@ -29,7 +32,7 @@ export const Layout = ({ children }) => {
         <div className="w-[500px] max-lg:w-full">
           <Header />
           {children}
-          {!isMenuPage && <CategoryFilter />}
+          {!isMenuPage && !isOtherPage && <CategoryFilter />}
         </div>
       )}
     </>
