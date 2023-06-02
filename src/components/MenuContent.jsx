@@ -28,10 +28,10 @@ export const MenuContent = () => {
 
   return (
     <div className="grid grid-cols-3 gap-[3px] mt-[5.6rem] max-md:mt-[4.9rem] max-sm:mt-[4.1rem] mb-[6.6rem] max-md:mb-[5.8rem] max-md:my-[4.9rem] max-sm:mb-[5.1rem] max-sm:my-[4.15rem]">
-      {filteredFood.map((item, index) => (
+      {filteredFood.map((item) => (
         <Link
-          to={`/${index}`}
-          key={item.title}
+          to={`/${item.id}`}
+          key={item.id}
           onClick={() => saveTargetInLS(item.title, 'food')}
         >
           <Card title={item.title} image={item.image} />
