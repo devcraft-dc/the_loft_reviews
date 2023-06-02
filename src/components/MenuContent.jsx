@@ -33,6 +33,7 @@ export const MenuContent = () => {
           to={`/${item.id}`}
           key={item.id}
           onClick={() => saveTargetInLS(item.title, 'food')}
+          style={{ contain: 'content' }}
         >
           <Card title={item.title} image={item.image} />
         </Link>

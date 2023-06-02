@@ -10,7 +10,7 @@ const links = [
 ];
 
 export const Header = () => (
-  <div className="fixed top-0 w-[500px] max-lg:w-full">
+  <div className="fixed top-0 z-40 w-[500px] max-lg:w-full">
     <header className="bg-main-black flex justify-between items-center border-b-[3px] text-secondary-white py-4 max-md:py-3 max-sm:py-2 px-5">
       <img
         className="w-15 h-11 max-md:w-13 max-md:h-8 max-sm:w-13 max-sm:h-7"
