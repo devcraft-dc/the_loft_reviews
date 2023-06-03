@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { Context } from './context';
 import { ReviewPage } from './pages/ReviewPage';
 import ScrollToTop from './components/scrollToTop';
+import { OtherReviews } from './pages/OtherReviews';
 
 function App() {
   const [searchText, setSearchText] = useState('');
@@ -22,6 +23,7 @@ function App() {
           <Route path="/:id" element={<ReviewPage />} />
           <Route path="/staff" element={<StaffPage />} />
           <Route path="/staff/:id" element={<ReviewPage />} />
+          <Route path='/other' element={<OtherReviews />}/>
         </Routes>
       </Layout>
     </Context.Provider>

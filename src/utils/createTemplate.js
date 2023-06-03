@@ -13,7 +13,11 @@ export const createTemplate = ({
 - Имя: ${target !== null ? target : ''}
 - Текст: ${reviewText}`;
 
-  const whichCategory = category === 'food' ? food : staff;
+  const other = `- Категория: Другое
+- Текст: ${reviewText}`;
+
+  const whichCategory =
+    category === 'food' ? food : category === 'other' ? other : staff;
 
   return `Отправитель: 
 - Имя: ${name ? name : 'не указано'}
