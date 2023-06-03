@@ -1,35 +1,15 @@
 import { useState } from 'react';
-import { createTemplate } from '../utils/createTemplate';
-import { getValueFromLS } from '../utils/getValueFromLS';
-
-const token = '6254094428:AAHLn_cZXnDOfoYncvguxarwXWsxzcpuqpI';
-const chatId = '-1001923326203';
+import { sendReview } from '../utils/sendReview';
 
 export const OtherReviews = () => {
   const [reviewText, setReviewText] = useState('');
 
-  const name = getValueFromLS('name');
-  const phone = getValueFromLS('phone');
-  const category = getValueFromLS('category');
-
-  const template = createTemplate({
-    name,
-    phone,
-    reviewText,
-    category,
-  });
-
-  const encoded = encodeURIComponent(template);
-
-  const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encoded}`;
-
-  const sendReview = (e) => {
+  const handleSendReview = (e) => {
+    e.preventDefault();
     if (reviewText !== '') {
-      e.preventDefault();
-      void fetch(url);
+      sendReview(reviewText);
       setReviewText('');
     }
-    e.preventDefault();
   };
 
   return (
@@ -42,7 +22,7 @@ export const OtherReviews = () => {
           onChange={(e) => setReviewText(e.target.value)}
           value={reviewText}
         ></textarea>
-        <button onClick={(e) => sendReview(e)}>Отправить</button>
+        <button onClick={(e) => handleSendReview(e)}>Отправить</button>
       </form>
     </div>
   );

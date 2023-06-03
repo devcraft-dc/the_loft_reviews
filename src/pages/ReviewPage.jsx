@@ -2,13 +2,9 @@ import { useState } from 'react';
 import food from '../assets/food.json';
 import staff from '../assets/staff.json';
 import { Link, useLocation, useParams } from 'react-router-dom';
-import { createTemplate } from '../utils/createTemplate';
-import { getValueFromLS } from '../utils/getValueFromLS';
 import sendIcon from '../assets/icons/send.svg';
 import backIcon from '../assets/icons/back.svg';
-
-const token = '6254094428:AAHLn_cZXnDOfoYncvguxarwXWsxzcpuqpI';
-const chatId = '-1001923326203';
+import { sendReview } from '../utils/sendReview';
 
 export const ReviewPage = () => {
   const [reviewText, setReviewText] = useState('');
@@ -23,27 +19,10 @@ export const ReviewPage = () => {
     ? staff.find((item) => item.id === +id)
     : food.find((item) => item.id === +id);
 
-  const name = getValueFromLS('name');
-  const phone = getValueFromLS('phone');
-  const category = getValueFromLS('category');
-  const target = getValueFromLS('target');
-
-  const template = createTemplate({
-    name,
-    phone,
-    reviewText,
-    category,
-    target,
-  });
-
-  const encoded = encodeURIComponent(template);
-
-  const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encoded}`;
-
-  const sendReview = (e, url) => {
+  const handleSendReview = (e) => {
     e.preventDefault();
     if (reviewText !== '') {
-      void fetch(url);
+      sendReview(reviewText);
       setReviewText('');
       setThanks(true);
     }
@@ -79,7 +58,7 @@ export const ReviewPage = () => {
           <span className="text-xl max-md:text-lg max-sm:text-sm w-3/5 text-center overflow-hidden text-ellipsis whitespace-nowrap">
             {title}
           </span>
-          <button onClick={(e) => sendReview(e, url)}>
+          <button onClick={(e) => handleSendReview(e)}>
             <img
               className="w-8 mx-auto max-md:w-7 max-sm:w-6"
               src={sendIcon}

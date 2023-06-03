@@ -11,13 +11,7 @@ const links = [
   { icon: reviews_icon, title: 'Другое', link: '/other' },
 ];
 
-export const Header = () => {
-  const getLink = (title) => {
-    if (title === 'Другое') {
-      localStorage.setItem('category', title);
-    }
-  };
-  return (
+export const Header = () => (
     <div className="fixed top-0 z-40 w-[500px] max-lg:w-full">
       <header className="bg-main-black flex justify-between items-center border-b-[3px] text-secondary-white py-4 max-md:py-3 max-sm:py-2 px-5">
         <img
@@ -36,7 +30,7 @@ export const Header = () => {
               }
               key={link.title}
               to={link.link}
-              onClick={() => getLink(link.title)}
+              onClick={link.title === "Другое" && localStorage.setItem('category', 'other')}
             >
               <IconButton icon={link.icon} title={link.title} />
             </NavLink>
@@ -45,4 +39,3 @@ export const Header = () => {
       </header>
     </div>
   );
-};
