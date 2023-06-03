@@ -11,14 +11,12 @@ export const OtherReviews = () => {
   const name = getValueFromLS('name');
   const phone = getValueFromLS('phone');
   const category = getValueFromLS('category');
-  const target = getValueFromLS('target');
 
   const template = createTemplate({
     name,
     phone,
     reviewText,
     category,
-    target,
   });
 
   const encoded = encodeURIComponent(template);

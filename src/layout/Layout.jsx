@@ -8,7 +8,7 @@ import { containsNumbers } from '../utils/containsNumbers';
 export const Layout = ({ children }) => {
   const [modalActive, setModalActive] = useState(true);
   const { pathname } = useLocation();
-  const isMenuPage = pathname.includes('staff');
+  const isStaffPage = pathname.includes('staff');
   const isOtherPage = pathname.includes('other');
   const isReviewPage = containsNumbers(pathname);
 
@@ -32,7 +32,7 @@ export const Layout = ({ children }) => {
         <div className="w-[500px] max-lg:w-full">
           <Header />
           {children}
-          {!isMenuPage && !isOtherPage && <CategoryFilter />}
+          {!isStaffPage && !isOtherPage && <CategoryFilter />}
         </div>
       )}
     </>
