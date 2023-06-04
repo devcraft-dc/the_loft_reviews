@@ -10,6 +10,7 @@ export const StaffContent = () => (
         to={`/staff/${item.id}`}
         key={item.id}
         onClick={() => saveTargetInLS(item.title, 'staff')}
+        style={{contain: "content"}}
       >
         <Card title={item.title} image={item.image} position={item.position} />
       </Link>

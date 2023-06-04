@@ -22,8 +22,6 @@
 html,
 body {
   height: 100%;
-  font-family: "Oswald", 'Trebuchet MS',  sans-serif;
-  font-weight: 300;
 }
 /*
   Typographic tweaks!
@@ -76,10 +74,4 @@ h6 {
   justify-content: center;
 }
 
-@font-face {
-  font-family: 'Oswald';
-  /* для хостинга url должен быть: '../fonts/Oswald.ttf' */
-  src: url('../fonts/Oswald.ttf');
-  font-weight: 100 200 300 400 500;
-  font-display: swap;
-}
+
