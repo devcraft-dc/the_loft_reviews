@@ -5,7 +5,7 @@ import { StaffPage } from './pages/StaffPage';
 import { useState } from 'react';
 import { Context } from './context';
 import { ReviewPage } from './pages/ReviewPage';
-import ScrollToTop from './components/scrollToTop';
+import ScrollToTop from './components/ScrollToTop';
 import { OtherReviews } from './pages/OtherReviews';
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
           <Route path="/:id" element={<ReviewPage />} />
           <Route path="/staff" element={<StaffPage />} />
           <Route path="/staff/:id" element={<ReviewPage />} />
-          <Route path='/other' element={<OtherReviews />}/>
+          <Route path="/other" element={<OtherReviews />} />
         </Routes>
       </Layout>
     </Context.Provider>
