@@ -30,10 +30,6 @@ export const Header = () => (
             }
             key={link.title}
             to={link.link}
-            onClick={
-              link.title === 'Другое' &&
-              localStorage.setItem('category', 'other')
-            }
           >
             <IconButton icon={link.icon} title={link.title} />
           </NavLink>

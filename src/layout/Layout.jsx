@@ -8,8 +8,8 @@ import { containsNumbers } from '../utils/containsNumbers';
 export const Layout = ({ children }) => {
   const [modalActive, setModalActive] = useState(true);
   const { pathname } = useLocation();
-  const isStaffPage = pathname.includes('staff');
-  const isOtherPage = pathname.includes('other');
+  const isMenuPage = pathname === '/';
+  const isThanksPage = pathname === '/thanks';
   const isReviewPage = containsNumbers(pathname);
 
   useEffect(() => {
@@ -17,24 +17,29 @@ export const Layout = ({ children }) => {
       document.body.classList.add('overflow-hidden');
     }
 
-    return () => document.body.classList.remove('overflow-hidden');
+    document.addEventListener('DOMContentLoaded', () => localStorage.clear());
+
+    return () => {
+      document.body.classList.remove('overflow-hidden');
+      document.removeEventListener('DOMContentLoaded', () =>
+        localStorage.clear()
+      );
+    };
   }, [modalActive]);
+
+  if (isThanksPage || isReviewPage) {
+    return <div className="w-[500px] max-lg:w-full">{children}</div>;
+  }
 
   return (
     <>
-      {modalActive && !isReviewPage && (
-        <WelcomeModal setModalActive={setModalActive} />
-      )}
+      {modalActive && <WelcomeModal setModalActive={setModalActive} />}
 
-      {isReviewPage ? (
-        <div className="w-[500px] max-lg:w-full">{children}</div>
-      ) : (
-        <div className="w-[500px] max-lg:w-full">
-          <Header />
-          {children}
-          {!isStaffPage && !isOtherPage && <CategoryFilter />}
-        </div>
-      )}
+      <div className="w-[500px] max-lg:w-full">
+        <Header />
+        {children}
+        {isMenuPage && <CategoryFilter />}
+      </div>
     </>
   );
 };
