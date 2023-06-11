@@ -29,7 +29,7 @@ export const Card = ({ title, cat, image, position, path }) => {
         {position && position}
       </div>
 
-      <div className='h-40 max-md:h-36 max-sm:h-28'>
+      <div className='h-40 max-lg:h-36 max-md:h-32 max-sm:h-28'>
         {inView ? (
           <img
             className="w-full h-full object-cover"
