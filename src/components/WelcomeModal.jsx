@@ -30,10 +30,10 @@ export const WelcomeModal = ({ setModalActive }) => {
 
   return (
     <div className="fixed grid place-items-center z-50 w-full h-full bg-black bg-opacity-75">
-      <div className="w-96 max-md:w-80 max-sm:w-72 bg-main-black rounded-lg fixed">
+      <div className="w-96 max-md:w-[21.5rem] max-sm:w-[18.5rem] bg-main-black rounded-lg fixed">
         <div className="relative">
           <button
-            className="absolute top-3 right-[12px] w-8 max-md:w-6 max-sm:w-6"
+            className="absolute top-3 right-[12px] w-8 "
             onClick={clearLocalStorage}
           >
             <img src={modal_close} alt="close icon" />
@@ -41,13 +41,13 @@ export const WelcomeModal = ({ setModalActive }) => {
         </div>
 
         <div className="w-full pt-8 pb-5 text-white">
-          <h3 className="text-center mb-5 text-2xl max-md:text-xl">
+          <h3 className="text-center mb-5 text-2xl ">
             Добро пожаловать! <br /> Введите ваши данные
           </h3>
           <form className="text-center flex flex-col gap-3">
             <div>
               <input
-                className="text-lg max-md:text-sm w-10/12 text-black border-[1px] 
+                className="text-lg w-10/12 text-black border-[1px] 
           border-white bg-secondary-white placeholder:text-black placeholder:opacity-75 rounded-sm p-1 pl-2"
                 type="text"
                 name="name"
@@ -58,7 +58,7 @@ export const WelcomeModal = ({ setModalActive }) => {
             </div>
             <div>
               <input
-                className="text-lg max-md:text-sm w-10/12 text-black border-[1px] 
+                className="text-lg w-10/12 text-black border-[1px] 
               border-white bg-secondary-white placeholder:text-black placeholder:opacity-75 mb-[10px] rounded-sm p-1 pl-2"
                 type=""
                 name="phone"
@@ -72,7 +72,7 @@ export const WelcomeModal = ({ setModalActive }) => {
 
         <div className="flex justify-center items-center mb-8">
           <button
-            className="grid items-center text-main-black text-lg py-1 px-3 max-md:text-sm cursor-pointer rounded bg-secondary-white"
+            className="grid items-center text-main-black text-lg py-1 px-3 cursor-pointer rounded bg-secondary-white"
             onClick={() => saveToLocalStorage(name, phone)}
           >
             Сохранить

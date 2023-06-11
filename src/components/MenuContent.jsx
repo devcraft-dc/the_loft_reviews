@@ -3,8 +3,6 @@ import { Card } from './Card';
 import { Context } from '../context';
 import { NothingFound } from './NothingFound';
 import food from '../assets/food.json';
-import { Link } from 'react-router-dom';
-import { saveTargetInLS } from '../utils/saveTargetInLS';
 
 export const MenuContent = () => {
   const { searchText, activeCategory } = useContext(Context);
@@ -27,16 +25,17 @@ export const MenuContent = () => {
   }
 
   return (
-    <div className="grid grid-cols-3 gap-[3px] mt-[5.6rem] max-md:mt-[4.9rem] max-sm:mt-[4.1rem] mb-[6.6rem] max-md:mb-[5.8rem] max-md:my-[4.9rem] max-sm:mb-[5.1rem] max-sm:my-[4.15rem]">
+    <div className="grid grid-cols-3 gap-[3px] mt-[5.8rem] max-md:mt-[5.1rem] max-sm:mt-[4.35rem] mb-[5.4rem] max-md:mb-[5.1rem] max-sm:mb-[4.9rem]">
       {filteredFood.map((item) => (
-        <Link
-          to={`/${item.id}`}
-          key={item.id}
-          onClick={() => saveTargetInLS(item.title, 'food')}
-          style={{ contain: 'content' }}
-        >
-          <Card title={item.title} image={item.image} />
-        </Link>
+        <div key={item.id}>
+          <Card
+            title={item.title}
+            cat={'food'}
+            image={item.image}
+            position={item.position}
+            path={`/staff/${item.id}`}
+          />
+        </div>
       ))}
     </div>
   );
