@@ -33,7 +33,7 @@ export const MenuContent = () => {
             cat={'food'}
             image={item.image}
             position={item.position}
-            path={`/staff/${item.id}`}
+            path={`/${item.id}`}
           />
         </div>
       ))}
