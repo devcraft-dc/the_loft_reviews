@@ -1,26 +1,24 @@
-import { createTemplate } from './createTemplate';
 import { getValueFromLS } from './getValueFromLS';
 
-export function sendReview(reviewText) {
-  const token = '6254094428:AAHLn_cZXnDOfoYncvguxarwXWsxzcpuqpI';
-  const chatId = '-1001923326203';
-
-  const name = getValueFromLS('name');
-  const phone = getValueFromLS('phone');
+export const sendReview = (text) => {
+  const name = getValueFromLS('name') ?? 'не указано';
+  const phone = getValueFromLS('phone') ?? 'не указано';
   const category = getValueFromLS('category');
   const target = getValueFromLS('target');
 
-  const template = createTemplate({
+  const review = {
     name,
     phone,
-    reviewText,
     category,
     target,
+    reviewText: text,
+  };
+
+  fetch('https://reviews-tg-proxy.onrender.com/the-loft', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(review),
   });
-
-  const encoded = encodeURIComponent(template);
-
-  const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encoded}`;
-
-  void fetch(url);
-}
+};
