@@ -1,5 +1,7 @@
 import { getValueFromLS } from './getValueFromLS';
 
+const BASE_URL = 'https://api.the-loft-reviews.ru/the-loft';
+
 export const sendReview = (text) => {
   const name = getValueFromLS('name') ?? 'не указано';
   const phone = getValueFromLS('phone') ?? 'не указано';
@@ -14,7 +16,7 @@ export const sendReview = (text) => {
     reviewText: text,
   };
 
-  fetch('https://reviews-tg-proxy.onrender.com/the-loft', {
+  fetch(BASE_URL, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
