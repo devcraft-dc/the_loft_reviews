@@ -4,6 +4,7 @@ import white_logo from '../assets/white_logo.png';
 import reviews_icon from '../assets/icons/reviews_icon.svg';
 import { IconButton } from '../components/IconButton';
 import { NavLink } from 'react-router-dom';
+import { memo } from 'react';
 
 const links = [
   { icon: food_icon, title: 'Меню', link: '/' },
@@ -11,7 +12,8 @@ const links = [
   { icon: reviews_icon, title: 'Другое', link: '/other' },
 ];
 
-export const Header = () => (
+export const Header = memo(function Header() {
+  return (
   <div className="fixed top-0 z-40 w-[500px] max-lg:w-full">
     <header className="bg-main-black flex justify-between items-center border-b-[3px] text-secondary-white py-4 max-md:py-3 max-sm:py-2 px-5">
       <img
@@ -37,4 +39,4 @@ export const Header = () => (
       </div>
     </header>
   </div>
-);
+)});
