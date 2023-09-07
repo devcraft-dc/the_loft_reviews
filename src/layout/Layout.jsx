@@ -22,7 +22,7 @@ export const Layout = ({ children }) => {
     return () => {
       document.body.classList.remove('overflow-hidden');
       document.removeEventListener('DOMContentLoaded', () =>
-        localStorage.clear()
+        localStorage.clear(),
       );
     };
   }, [modalActive]);

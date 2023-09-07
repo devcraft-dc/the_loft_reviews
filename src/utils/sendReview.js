@@ -1,6 +1,6 @@
 import { getValueFromLS } from './getValueFromLS';
 
-const BASE_URL = 'https://api.the-loft-reviews.ru/the-loft';
+const BASE_URL = 'https://reviews-tg-proxy.onrender.com/the-loft';
 
 export const sendReview = (text) => {
   const name = getValueFromLS('name') ?? 'не указано';

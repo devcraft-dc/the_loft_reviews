@@ -10,23 +10,23 @@ export function formatPhoneNumber(value) {
   if (phoneNumberLength > 4 && phoneNumberLength < 8) {
     return `${phoneNumber.slice(0, 1)} ${phoneNumber.slice(
       1,
-      4
+      4,
     )} ${phoneNumber.slice(4, 8)}`;
   }
   if (phoneNumberLength < 10) {
     return `${phoneNumber.slice(0, 1)} ${phoneNumber.slice(
       1,
-      4
+      4,
     )} ${phoneNumber.slice(4, 7)}-${phoneNumber.slice(7, 10)}`;
   }
 
   if (phoneNumberLength < 12) {
     return `${phoneNumber.slice(0, 1)} ${phoneNumber.slice(
       1,
-      4
+      4,
     )} ${phoneNumber.slice(4, 7)}-${phoneNumber.slice(
       7,
-      9
+      9,
     )}-${phoneNumber.slice(9)}`;
   }
 
