@@ -29,7 +29,7 @@ export const WelcomeModal = ({ setModalActive }) => {
   };
 
   return (
-    <div className="fixed grid place-items-center z-50 w-full h-full bg-black bg-opacity-75">
+    <div className="fixed flex items-center justify-center z-50 w-full h-full bg-black bg-opacity-75">
       <div className="w-96 max-md:w-[21.5rem] max-sm:w-[18.5rem] bg-main-black rounded-lg fixed">
         <div className="relative">
           <button
